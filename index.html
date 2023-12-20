@@ -14,21 +14,22 @@
     <button id="popout">Pop Out</button>
 
     <script>
-        // Add JavaScript code to simulate the actions performed by the Selenium script
-
         // Function to simulate clicking the "pop out" button
         function simulatePopOut() {
             console.log("Simulating Pop Out");
 
             // Simulate a delay before switching to the pop-out window
             setTimeout(function() {
-                // Open a new window (replace with the actual URL)
-                var popOutWindow = window.open("https://example.com/popout");
+                // Open a new window with the YouTube video
+                var popOutWindow = window.open("https://www.youtube.com/watch?v=21X5lGlDOfg");
 
-                // Simulate a delay before clicking the play button in the pop-out window
+                // Simulate a delay before interacting with elements in the pop-out window
                 setTimeout(function() {
-                    // Simulate clicking the play button in the pop-out window
-                    console.log("Simulating Play Button Click in Pop Out Window");
+                    // Access the <iframe> element in the pop-out window
+                    var youtubeIframe = popOutWindow.document.getElementsByTagName("iframe")[0];
+
+                    // Simulate clicking the play button in the YouTube video
+                    youtubeIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
                 }, 3000);  // Adjust the duration as needed
             }, 3000);  // Adjust the duration as needed
         }
