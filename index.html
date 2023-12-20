@@ -16,26 +16,25 @@
     <script>
         // Add JavaScript code to simulate the actions performed by the Selenium script
 
-        // Example: Simulate a delay before clicking the "pop out" button
-        setTimeout(function() {
-            // Find the "pop out" button and click it
-            var popOutButton = document.getElementById("popout");
-            popOutButton.click();
+        // Function to simulate clicking the "pop out" button
+        function simulatePopOut() {
+            console.log("Simulating Pop Out");
 
             // Simulate a delay before switching to the pop-out window
             setTimeout(function() {
-                // Switch to the pop-out window
-                window.open("https://example.com/popout");
-                
-                // Simulate a delay before clicking the play button
+                // Open a new window (replace with the actual URL)
+                var popOutWindow = window.open("https://example.com/popout");
+
+                // Simulate a delay before clicking the play button in the pop-out window
                 setTimeout(function() {
-                    // Find and click the play button in the pop-out window
-                    // Note: You may need to adjust this part based on the actual structure of the pop-out window
-                    var playButton = window.document.getElementById("play");
-                    playButton.click();
+                    // Simulate clicking the play button in the pop-out window
+                    console.log("Simulating Play Button Click in Pop Out Window");
                 }, 3000);  // Adjust the duration as needed
             }, 3000);  // Adjust the duration as needed
-        }, 3000);  // Adjust the duration as needed
+        }
+
+        // Attach the simulatePopOut function to the button click event
+        document.getElementById("popout").addEventListener("click", simulatePopOut);
     </script>
 
 </body>
