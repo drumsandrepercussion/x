@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your YouTube Video Page</title>
+    <title>Automated Pop Out Live Feed</title>
+    <!-- Add any additional styles or scripts if needed -->
 </head>
 <body>
 
-    <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
-        <iframe 
-            src="https://www.youtube.com/embed/21X5lGlDOfg" 
-            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" 
-            frameborder="0" 
-            allowfullscreen>
-        </iframe>
-    </div>
+    <h1>Automated Pop Out Live Feed</h1>
+
+    <!-- Add an element with an ID that matches what your script interacts with -->
+    <button id="popout">Pop Out</button>
+
+    <script>
+        // Add JavaScript code to simulate the actions performed by the Selenium script
+
+        // Example: Simulate a delay before clicking the "pop out" button
+        setTimeout(function() {
+            // Find the "pop out" button and click it
+            var popOutButton = document.getElementById("popout");
+            popOutButton.click();
+
+            // Simulate a delay before switching to the pop-out window
+            setTimeout(function() {
+                // Switch to the pop-out window
+                window.open("https://example.com/popout");
+                
+                // Simulate a delay before clicking the play button
+                setTimeout(function() {
+                    // Find and click the play button in the pop-out window
+                    // Note: You may need to adjust this part based on the actual structure of the pop-out window
+                    var playButton = window.document.getElementById("play");
+                    playButton.click();
+                }, 3000);  // Adjust the duration as needed
+            }, 3000);  // Adjust the duration as needed
+        }, 3000);  // Adjust the duration as needed
+    </script>
 
 </body>
-</html
+</html>
